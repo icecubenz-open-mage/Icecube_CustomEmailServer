@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Icecube_CustomEmailServer>
+            <version>1.0.0</version>
+        </Icecube_CustomEmailServer>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <customemailserver after="Mage_Adminhtml">Icecube_CustomEmailServer</customemailserver>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <global>
+        <helpers>
+            <customemailserver>
+                <class>Icecube_CustomEmailServer_Helper</class>
+            </customemailserver>
+        </helpers>
+        <models>
+            <customemailserver>
+                <class>Icecube_CustomEmailServer_Model</class>
+            </customemailserver>
+        </models>
+        <blocks>
+            <customemailserver>
+                <class>Icecube_CustomEmailServer_Block</class>
+            </customemailserver>
+        </blocks>
+        <events>
+            <newsletter_send_before>
+                <observers>
+                    <customemailserver_newsletter_send_before>
+                        <class>customemailserver/observer</class>
+                        <method>newsletterBefore</method>
+                    </customemailserver_newsletter_send_before>
+                </observers>
+            </newsletter_send_before>
+            <!-- <newsletter_send_after>
+                <observers>
+                    <customemailserver_newsletter_send_after>
+                        <class>customemailserver/observer</class>
+                        <method>newsletterAfter</method>
+                    </customemailserver_newsletter_send_after>
+                </observers>
+            </newsletter_send_after> -->
+            <email_queue_send_before>
+                <observers>
+                    <customemailserver_queue_send_before>
+                        <class>customemailserver/observer</class>
+                        <method>queueBefore</method>
+                    </customemailserver_queue_send_before>
+                </observers>
+            </email_queue_send_before>
+            <!-- <email_queue_send_after>
+                <observers>
+                    <customemailserver_queue_send_after>
+                        <class>customemailserver/observer</class>
+                        <method>queueAfter</method>
+                    </customemailserver_queue_send_after>
+                </observers>
+            </email_queue_send_after> -->
+            <email_template_send_before>
+                <observers>
+                    <customemailserver_template_send_before>
+                        <class>customemailserver/observer</class>
+                        <method>templateBefore</method>
+                    </customemailserver_template_send_before>
+                </observers>
+            </email_template_send_before>
+            <!-- <email_template_send_after>
+                <observers>
+                    <customemailserver_template_send_after>
+                        <class>customemailserver/observer</class>
+                        <method>templateAfter</method>
+                    </customemailserver_template_send_after>
+                </observers>
+            </email_template_send_after> -->
+        </events>
+    </global>
+    <default>
+        <system>
+            <smtp>
+                <enc/>
+                <auth/>
+                <username/>
+                <password backend_model="adminhtml/system_config_backend_encrypted"/>
+                <test_email_address/>
+            </smtp>
+        </system>
+    </default>
+</config>
