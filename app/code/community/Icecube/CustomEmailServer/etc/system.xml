@@ -74,16 +74,47 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </test_email_address>
-                        <test translate="button_label comment">
+                        <test_email translate="button_label comment">
                             <label/>
-                            <button_label>Check Connection</button_label>
+                            <test_type>email</test_type>
+                            <button_label>Test Email</button_label>
                             <frontend_model>customemailserver/adminhtml_system_config_test</frontend_model>
-                            <comment><![CDATA[Settings must be saved first!]]></comment>
                             <sort_order>130</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </test>
+                        </test_email>
+                        <test_queue translate="button_label comment">
+                            <label/>
+                            <test_type>queue</test_type>
+                            <button_label>Test Queue Email</button_label>
+                            <frontend_model>customemailserver/adminhtml_system_config_test</frontend_model>
+                            <sort_order>140</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_queue>
+                        <test_template translate="button_label comment">
+                            <label/>
+                            <test_type>template</test_type>
+                            <button_label>Test Template Email</button_label>
+                            <frontend_model>customemailserver/adminhtml_system_config_test</frontend_model>
+                            <sort_order>150</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_template>
+                        <test_newsletter translate="button_label comment">
+                            <label/>
+                            <test_type>newsletter</test_type>
+                            <button_label>Test Newsletter</button_label>
+                            <frontend_model>customemailserver/adminhtml_system_config_test</frontend_model>
+                            <comment><![CDATA[Settings must be saved before sending test emails. Cron must be running for Queue & Newsletter tests]]></comment>
+                            <sort_order>160</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_newsletter>
                     </fields>
                 </smtp>
             </groups>
