@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Icecube_CustomEmailServer>
-            <version>1.0.0</version>
+            <version>1.2.0</version>
         </Icecube_CustomEmailServer>
     </modules>
 
@@ -12,6 +12,7 @@
                 <args>
                     <modules>
                         <customemailserver after="Mage_Adminhtml">Icecube_CustomEmailServer</customemailserver>
+                        <customemailserver_grid after="Mage_Adminhtml">Icecube_CustomEmailServer_Adminhtml</customemailserver_grid>
                     </modules>
                 </args>
             </adminhtml>
@@ -30,6 +31,16 @@
         </routers>
     </frontend>
 
+    <adminhtml>
+        <layout>
+            <updates>
+                <customemailserver>
+                    <file>customemailserver.xml</file>
+                </customemailserver>
+            </updates>
+        </layout>
+    </adminhtml>
+
     <global>
         <helpers>
             <customemailserver>
@@ -39,8 +50,24 @@
         <models>
             <customemailserver>
                 <class>Icecube_CustomEmailServer_Model</class>
+                <resourceModel>customemailserver_resource</resourceModel>
             </customemailserver>
+            <customemailserver_resource>
+                <class>Icecube_CustomEmailServer_Model_Resource</class>
+                <entities>
+                    <log>
+                        <table>customemailserver_log</table>
+                    </log>
+                </entities>
+            </customemailserver_resource>
         </models>
+        <resources>
+            <customemailserver_setup>
+                <setup>
+                    <module>Icecube_CustomEmailServer</module>
+                </setup>
+            </customemailserver_setup>
+        </resources>
         <blocks>
             <customemailserver>
                 <class>Icecube_CustomEmailServer_Block</class>
@@ -55,14 +82,14 @@
                     </customemailserver_newsletter_send_before>
                 </observers>
             </newsletter_send_before>
-            <!-- <newsletter_send_after>
+            <newsletter_send_after>
                 <observers>
                     <customemailserver_newsletter_send_after>
                         <class>customemailserver/observer</class>
                         <method>newsletterAfter</method>
                     </customemailserver_newsletter_send_after>
                 </observers>
-            </newsletter_send_after> -->
+            </newsletter_send_after>
             <email_queue_send_before>
                 <observers>
                     <customemailserver_queue_send_before>
@@ -71,14 +98,14 @@
                     </customemailserver_queue_send_before>
                 </observers>
             </email_queue_send_before>
-            <!-- <email_queue_send_after>
+            <email_queue_send_after>
                 <observers>
                     <customemailserver_queue_send_after>
                         <class>customemailserver/observer</class>
                         <method>queueAfter</method>
                     </customemailserver_queue_send_after>
                 </observers>
-            </email_queue_send_after> -->
+            </email_queue_send_after>
             <email_template_send_before>
                 <observers>
                     <customemailserver_template_send_before>
@@ -87,14 +114,14 @@
                     </customemailserver_template_send_before>
                 </observers>
             </email_template_send_before>
-            <!-- <email_template_send_after>
+            <email_template_send_after>
                 <observers>
                     <customemailserver_template_send_after>
                         <class>customemailserver/observer</class>
                         <method>templateAfter</method>
                     </customemailserver_template_send_after>
                 </observers>
-            </email_template_send_after> -->
+            </email_template_send_after>
             <email_send_before>
                 <observers>
                     <customemailserver_email_send_before>
@@ -103,14 +130,14 @@
                     </customemailserver_email_send_before>
                 </observers>
             </email_send_before>
-            <!-- <email_send_after>
+            <email_send_after>
                 <observers>
                     <customemailserver_email_send_after>
                         <class>customemailserver/observer</class>
                         <method>emailAfter</method>
                     </customemailserver_email_send_after>
                 </observers>
-            </email_send_after> -->
+            </email_send_after>
         </events>
     </global>
     <default>

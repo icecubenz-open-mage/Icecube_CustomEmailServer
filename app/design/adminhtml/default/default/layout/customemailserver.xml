@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_email_log_index>
+        <reference name="content">
+            <block type="customemailserver/adminhtml_email_log" name="email_log"></block>
+        </reference>
+    </adminhtml_email_log_index>
+</layout>
