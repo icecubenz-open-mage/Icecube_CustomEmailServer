@@ -22,6 +22,10 @@ $ composer require icecube/custom-email-server
 
 ![](https://www.dropbox.com/s/xp7guc4zuhpyvko/Screen_Shot_2021-01-28_at_2.29.34_PM.png?dl=1)
 
+### Email Logs
+
+By default emails are also logged in the DB and available to view in the `System` -> `Email Logs` menu.
+
 
 ## History
 
