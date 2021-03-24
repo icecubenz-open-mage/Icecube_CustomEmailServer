@@ -17,6 +17,8 @@ class Icecube_CustomEmailServer_Model_Transport_Smtp
         $password = $this->_helper()->getPassword($storeId);
 
         $config = array();
+        $config['name'] = gethostname();
+        
         if (isset($auth)) {
             $config['auth']     = $auth;
             $config['username'] = $username;
