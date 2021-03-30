@@ -35,6 +35,11 @@ class Icecube_CustomEmailServer_Model_Observer extends Varien_Object
      */
     public function emailAfter(Varien_Event_Observer $observer)
     {
+        $helper = Mage::helper('customemailserver');
+        if (!$helper->isLogEnabled()) {
+            return $this;
+        }
+
         $log = Mage::getModel('customemailserver/email_log');
         try {
             $log->setType(Icecube_CustomEmailServer_Model_Email_Log_Type::TYPE_EMAIL_SEND_AFTER)
@@ -81,6 +86,11 @@ class Icecube_CustomEmailServer_Model_Observer extends Varien_Object
      */
     public function newsletterAfter(Varien_Event_Observer $observer)
     {
+        $helper = Mage::helper('customemailserver');
+        if (!$helper->isLogEnabled()) {
+            return $this;
+        }
+
         $log = Mage::getModel('customemailserver/email_log');
         try {
             $log->setType(Icecube_CustomEmailServer_Model_Email_Log_Type::TYPE_NEWSLETTER_SEND_AFTER)
@@ -125,6 +135,11 @@ class Icecube_CustomEmailServer_Model_Observer extends Varien_Object
      */
     public function queueAfter(Varien_Event_Observer $observer)
     {
+        $helper = Mage::helper('customemailserver');
+        if (!$helper->isLogEnabled()) {
+            return $this;
+        }
+
         $log = Mage::getModel('customemailserver/email_log');
         try {
             $log->setType(Icecube_CustomEmailServer_Model_Email_Log_Type::TYPE_EMAIL_QUEUE_SEND_AFTER)
@@ -171,6 +186,11 @@ class Icecube_CustomEmailServer_Model_Observer extends Varien_Object
      */
     public function templateAfter(Varien_Event_Observer $observer)
     {
+        $helper = Mage::helper('customemailserver');
+        if (!$helper->isLogEnabled()) {
+            return $this;
+        }
+
         $log = Mage::getModel('customemailserver/email_log');
         try {
             $log->setType(Icecube_CustomEmailServer_Model_Email_Log_Type::TYPE_EMAIL_TEMPLATE_SEND_AFTER)

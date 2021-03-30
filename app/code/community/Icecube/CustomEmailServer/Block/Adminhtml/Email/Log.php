@@ -11,6 +11,11 @@ class Icecube_CustomEmailServer_Block_Adminhtml_Email_Log extends Mage_Adminhtml
 
         parent::__construct();
 
+        $this->_addButton('clear', array(
+            'label'     => $this->__('Clear Logs'),
+            'onclick'   => 'setLocation(\'' . $this->getUrl('*/*/clear') .'\')',
+        ));
+
         $this->_removeButton('add');
     }
 }

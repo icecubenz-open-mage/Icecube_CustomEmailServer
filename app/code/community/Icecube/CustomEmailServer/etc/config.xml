@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Icecube_CustomEmailServer>
-            <version>1.2.0</version>
+            <version>1.5.0</version>
         </Icecube_CustomEmailServer>
     </modules>
 
@@ -148,6 +148,7 @@
                 <username/>
                 <password backend_model="adminhtml/system_config_backend_encrypted"/>
                 <test_email_address/>
+                <log_enabled>0</log_enabled>
             </smtp>
         </system>
     </default>

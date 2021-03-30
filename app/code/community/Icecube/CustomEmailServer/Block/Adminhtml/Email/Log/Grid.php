@@ -44,8 +44,8 @@ class Icecube_CustomEmailServer_Block_Adminhtml_Email_Log_Grid extends Mage_Admi
             'header'    => Mage::helper('core')->__('Email Content'),
             'align'     => 'left',
             'sortable'  => false,
-            'frame_callback' => array($this, 'renderContent'),
-            'index'     => 'content',
+            'filter'    => false,
+            'renderer'  => 'customemailserver/adminhtml_email_log_grid_renderer_action',
         ));
 
         $this->addColumn('created_at', array(
@@ -55,10 +55,5 @@ class Icecube_CustomEmailServer_Block_Adminhtml_Email_Log_Grid extends Mage_Admi
         ));
 
         return parent::_prepareColumns();
-    }
-
-    public function renderContent($value)
-    {
-        return '<div style="height: 75px; overflow: auto;">' . str_replace("\n", "<br/>", $value) . '</div>';
     }
 }

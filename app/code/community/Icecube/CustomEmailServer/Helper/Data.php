@@ -11,6 +11,7 @@ class Icecube_CustomEmailServer_Helper_Data extends Mage_Core_Helper_Abstract
     const XML_PATH_PASSWORD   = 'system/smtp/password';
     const XML_PATH_TEST_EMAIL_ADDRESS  = 'system/smtp/test_email_address';
     const XML_PATH_TEST_EMAIL_TEMPLATE = 'contacts/email/email_template';
+    const XML_PATH_LOG_ENABLED = 'system/smtp/log_enabled';
 
     public function isEnabled($storeId = null)
     {
@@ -55,5 +56,10 @@ class Icecube_CustomEmailServer_Helper_Data extends Mage_Core_Helper_Abstract
     public function getTestEmailTemplate($storeId = null)
     {
         return Mage::getStoreConfig(self::XML_PATH_TEST_EMAIL_TEMPLATE, $storeId);
+    }
+
+    public function isLogEnabled($storeId = null)
+    {
+        return (bool)Mage::getStoreConfig(self::XML_PATH_LOG_ENABLED, $storeId);
     }
 }

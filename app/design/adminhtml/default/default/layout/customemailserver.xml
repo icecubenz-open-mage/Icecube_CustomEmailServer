@@ -5,4 +5,11 @@
             <block type="customemailserver/adminhtml_email_log" name="email_log"></block>
         </reference>
     </adminhtml_email_log_index>
+
+    <adminhtml_email_log_preview>
+        <reference name="root">
+            <action method="setTemplate"><template>customemailserver/log/preview.phtml</template></action>
+            <block type="customemailserver/adminhtml_email_log_preview" name="email_log_preview"></block>
+        </reference>
+    </adminhtml_email_log_preview>
 </layout>
