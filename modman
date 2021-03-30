@@ -1,3 +1,4 @@
-app/code/community/Icecube/CustomEmailServer/                         app/code/community/Icecube/CustomEmailServer/
-app/design/adminhtml/default/default/layout/customemailserver.xml     app/design/adminhtml/default/default/layout/customemailserver.xml
-app/etc/modules/Icecube_CustomEmailServer.xml                         app/etc/modules/Icecube_CustomEmailServer.xml
+app/code/community/Icecube/CustomEmailServer/                           app/code/community/Icecube/CustomEmailServer/
+app/design/adminhtml/default/default/layout/customemailserver.xml       app/design/adminhtml/default/default/layout/customemailserver.xml
+app/design/adminhtml/default/default/template/customemailserver/log/    app/design/adminhtml/default/default/template/customemailserver/log/
+app/etc/modules/Icecube_CustomEmailServer.xml                           app/etc/modules/Icecube_CustomEmailServer.xml
