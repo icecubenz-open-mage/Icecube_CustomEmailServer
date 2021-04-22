@@ -14,7 +14,7 @@ class Icecube_CustomEmailServer_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function isEnabled($storeId = null)
     {
-        return (bool)Mage::getStoreConfig(self::XML_PATH_DISABLE, $storeId);
+        return !(bool)Mage::getStoreConfig(self::XML_PATH_DISABLE, $storeId);
     }
 
     public function getHost($storeId = null)
